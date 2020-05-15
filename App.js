@@ -48,7 +48,6 @@ export default function App() {
   const addTaskHandler=()=>{
     if(currInput.length>0){
     const newTask = new Task(currInput,taskList)
-   console.log(taskList)
     const arr = [...taskList,newTask]
     Keyboard.dismiss()
     setTaskList(arr)
@@ -63,7 +62,7 @@ export default function App() {
     {error.length > 0 ? <Text style={{color:'tomato'}}>{error}</Text>:null}
       <Input onChangeText={Inputhandler} value={currInput}/>
         <Button onPress={addTaskHandler}/>
-        <Text style={{color:'grey',fontWeight:'bold',marginTop:20,marginBottom:20,fontSize:18}}>Your Tasks</Text>
+        <Text style={styles.yourTask}>Your Tasks</Text>
         {taskList.length>0?<FlatList
         data={taskList}
         renderItem={({ item }) => (
@@ -93,5 +92,15 @@ const styles = StyleSheet.create({
   taskList:{
     marginTop:20
   },
-  header:{fontSize:25,fontWeight:'bold',marginBottom:10}
+  header:{fontSize:25,
+    fontWeight:'bold',
+    marginBottom:10
+  },
+  yourTask:{
+    color:'grey',
+    fontWeight:'bold',
+    marginTop:20,
+    marginBottom:20,
+    fontSize:18
+  }
 });

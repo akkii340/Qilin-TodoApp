@@ -3,7 +3,6 @@ import {View,Text,StyleSheet,TouchableOpacity} from 'react-native'
 import { AntDesign } from '@expo/vector-icons'; 
 
 const TodoItems = (props) =>{
-    console.log(props.id)
         return(<View style={styles.taskContainer}>
             <View style={styles.inner}>
                      <Text style={[styles.textStyle,{marginRight:10}]}>{props.id}</Text>
